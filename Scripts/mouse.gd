@@ -201,7 +201,7 @@ func _process(_delta):
 		position.y = y_position
 		
 		queue_redraw()
-		print(column)
+		# print(column)
 
 func _draw():
 	if not finished:

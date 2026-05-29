@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bsyhye204i2b3"]
+[gd_scene format=3 uid="uid://bsyhye204i2b3"]
 
 [ext_resource type="PackedScene" uid="uid://cqfoa4vp1cjuf" path="res://Scenes/board.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cb6n6tawxpwvx" path="res://Scripts/counters.gd" id="2_8gbba"]
@@ -14,24 +14,17 @@ bg_color = Color(0, 0, 0, 0.862745)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjvhh"]
 bg_color = Color(1, 1, 1, 0.894118)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_344ge"]
-bg_color = Color(0.152941, 0.152941, 0.152941, 0.917647)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynf5e"]
-bg_color = Color(0.294118, 0.294118, 0.294118, 0.929412)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1ilt"]
+bg_color = Color(0.0846899, 0.0846899, 0.0846899, 0.913725)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hptm8"]
 bg_color = Color(0.415686, 0.415686, 0.415686, 0.894118)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1ilt"]
-bg_color = Color(0.0846899, 0.0846899, 0.0846899, 0.913725)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynf5e"]
+bg_color = Color(0.294118, 0.294118, 0.294118, 0.929412)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bp64"]
-bg_color = Color(0.800491, 0.800491, 0.800491, 0.894118)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_344ge"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 0.917647)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xkr"]
 bg_color = Color(0.601223, 0.601223, 0.601223, 0.894118)
@@ -40,23 +33,30 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bp64"]
+bg_color = Color(0.800491, 0.800491, 0.800491, 0.894118)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="LabelSettings" id="LabelSettings_6bp64"]
 font_size = 27
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=638445817]
 
-[node name="Board" parent="." instance=ExtResource("1_jjgbg")]
+[node name="Board" parent="." unique_id=126609300 instance=ExtResource("1_jjgbg")]
 position = Vector2(32, 32)
 
-[node name="Counters" type="Node2D" parent="."]
+[node name="Counters" type="Node2D" parent="." unique_id=329232616]
 script = ExtResource("2_8gbba")
 
-[node name="Mouse" type="StaticBody2D" parent="."]
+[node name="Mouse" type="StaticBody2D" parent="." unique_id=2111075448]
 position = Vector2(1144, 1064)
 script = ExtResource("2_bo1nx")
 counter_radius_factor = 2.15
 
-[node name="End game" type="Control" parent="."]
+[node name="End game" type="Control" parent="." unique_id=1426316726]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -64,7 +64,7 @@ offset_bottom = 40.0
 script = ExtResource("4_jjvhh")
 metadata/_edit_use_anchors_ = true
 
-[node name="Black win" type="RichTextLabel" parent="End game"]
+[node name="Black win" type="RichTextLabel" parent="End game" unique_id=1511033428]
 visible = false
 layout_mode = 0
 offset_left = 80.0
@@ -79,7 +79,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="White win" type="RichTextLabel" parent="End game"]
+[node name="White win" type="RichTextLabel" parent="End game" unique_id=64144291]
 visible = false
 layout_mode = 0
 offset_left = 80.0
@@ -95,7 +95,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Play again" type="Button" parent="End game"]
+[node name="Play again" type="Button" parent="End game" unique_id=549798468]
 visible = false
 layout_mode = 0
 offset_left = 320.0
@@ -104,13 +104,13 @@ offset_right = 641.0
 offset_bottom = 784.5
 tooltip_text = "Restart the game!"
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxFlat_344ge")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ynf5e")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hptm8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_d1ilt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hptm8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ynf5e")
+theme_override_styles/focus = SubResource("StyleBoxFlat_344ge")
 text = "Play Again!"
 
-[node name="End request" type="ColorRect" parent="End game"]
+[node name="End request" type="ColorRect" parent="End game" unique_id=1898746384]
 visible = false
 layout_mode = 0
 offset_left = 180.0
@@ -119,61 +119,61 @@ offset_right = 780.0
 offset_bottom = 585.0
 color = Color(0, 0, 0, 0.862745)
 
-[node name="Yes" type="Button" parent="End game/End request"]
+[node name="Yes" type="Button" parent="End game/End request" unique_id=362843249]
 layout_mode = 0
 offset_left = 52.0
 offset_top = 163.0
 offset_right = 252.0
 offset_bottom = 260.0
 tooltip_text = "Restart the game!"
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = ExtResource("5_kry3j")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6bp64")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_21xkr")
 theme_override_styles/normal = ExtResource("5_kry3j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_21xkr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6bp64")
+theme_override_styles/focus = ExtResource("5_kry3j")
 text = "Yes"
 
-[node name="No" type="Button" parent="End game/End request"]
+[node name="No" type="Button" parent="End game/End request" unique_id=328900013]
 layout_mode = 0
 offset_left = 348.0
 offset_top = 163.0
 offset_right = 548.0
 offset_bottom = 260.0
 tooltip_text = "Cancel"
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = ExtResource("5_kry3j")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6bp64")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_21xkr")
 theme_override_styles/normal = ExtResource("5_kry3j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_21xkr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6bp64")
+theme_override_styles/focus = ExtResource("5_kry3j")
 text = "No"
 
-[node name="End request label" type="Label" parent="End game/End request"]
+[node name="End request label" type="Label" parent="End game/End request" unique_id=1704361973]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 51.0
@@ -184,7 +184,7 @@ label_settings = SubResource("LabelSettings_6bp64")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button undo" type="Button" parent="."]
+[node name="Button undo" type="Button" parent="." unique_id=1226080164]
 custom_minimum_size = Vector2(75, 75)
 offset_left = 960.0
 offset_top = 24.0
@@ -194,7 +194,7 @@ icon = ExtResource("6_21xkr")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button restart" type="Button" parent="."]
+[node name="Button restart" type="Button" parent="." unique_id=1922939694]
 custom_minimum_size = Vector2(75, 75)
 offset_left = 960.0
 offset_top = 120.0
