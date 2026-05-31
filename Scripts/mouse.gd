@@ -216,7 +216,7 @@ func _draw():
 			else:
 				draw_circle(Vector2(0, 0), counter_radius, Color(255, 255, 255, 0.2))
 
-func _input(event):
+func _unhandled_input(event):
 	if not restarted:
 		if not finished:
 			if event is InputEventMouseButton and (get_viewport().get_mouse_position()[0]+GRID_SIZE/2 < 15.5 * GRID_SIZE):
